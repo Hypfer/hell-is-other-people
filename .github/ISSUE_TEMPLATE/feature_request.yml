@@ -1,0 +1,15 @@
+name: Feature request
+description: A request for a software feature or functionality
+labels: ["deleteme"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Lorem ipsum
+  - type: checkboxes
+    id: checkboxes
+    attributes:
+      label: Conclusion
+      options:
+        - label: I will not click the submit button
+          required: true

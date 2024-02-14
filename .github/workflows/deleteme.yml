@@ -1,0 +1,16 @@
+name: Delete me
+on:
+  issues:
+    types:
+      - labeled
+jobs:
+  delete:
+    if: github.event.label.name == 'deleteme'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete me
+        run: gh issue delete "$NUMBER" --yes
+        env:
+          GH_TOKEN: ${{ secrets.SANITY_PAT }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
